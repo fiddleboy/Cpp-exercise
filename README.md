@@ -1,2 +1,2 @@
 # Cpp-exercise
-Basic practice of Cpp
+Starting from basic syntax of C++ to advanced use
