@@ -10,8 +10,13 @@ int main() {
     //copy initializtion & copy declaration
     // int i;
     // i = 10;
-    cout << "Hello, World!" << endl;
+    cout << "Hello, World!" << endl; //it's better to use '\n' than endl
     cout << "The value of fixed: " << fixed << endl;
     cout << "The end!"<<endl;
+
+
+    //1.8 Literals and Operators:
+    //Literal: is basically a constant, the value of a literal cannot be changed
+
     return 0;
 }
