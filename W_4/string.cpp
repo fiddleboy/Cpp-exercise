@@ -27,14 +27,19 @@ int main(){
     std::cout << "Pick 1 or 2: ";
 	int choice { 0 };
 	std::cin >> choice;
- 
 
-    // >>>
-    std::cout << "Pick 1 or 2: ";
-	int choice { 0 };
-	std::cin >> choice;
-	std::cin.ignore(32767, '\n');   // ignore up to 32767 characters until a \n is removed
- 
+	// ignore up to 32767 characters until a \n is removed, 
+    // 32767 is the largest signed value guaranteed to fit in a (2-byte) integer on all platforms.
+    std::cin.ignore(32767, '\n');
+
+
+    // String Concatnation
+    std::string s1 {"jason"};
+    std::string s2 {" is handsome!"};
+    std::cout << s1+s2 << std::endl;
+    s1+=" is more than handsome";
+    std::cout << s1+s2 << std::endl;
+    std::cout << s1.length() << std::endl; 
      
     return 0;
 }
