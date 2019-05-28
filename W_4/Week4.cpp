@@ -2,8 +2,10 @@
 //>>>
 //Global Variable and Scopes
 
+
 //>>> Define a global variable here
 int value {20};
+
 
 //>>>
 //Internal and External Variables
@@ -11,15 +13,24 @@ int value {20};
 //Variables with external linkage can be used both in the file they are defined in, as well as in other files.
 //By default, non-const variables declared outside of a function are assumed to be external. 
 //However, const variables declared outside of a function are assumed to be internal.
+
 //Internal: using static
 // static int inside_value{25}; //Only test for fun, this will caue error when u run the main in global.cpp
 
 //External: using extern; In the other files(where u want to use this variable), also use extern to access this variable
 int out_value{20};
 
+
 //>>>
 //Function Linkage
 //Functions always default to external linkage, but can be set to internal linkage via the static keyword.
+
+
+// Notice:
+// A better idea to store a number of global variables is to define them in namespace in header file without initializing them 
+// with a value. Thus, we will have forward declaration in our *.h file. Then #include *.h and initialize them also in name space in *.cpp file
+ 
+
 
 
 int main(){
