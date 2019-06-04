@@ -21,10 +21,41 @@ int main(){
     int input;
     std::cout << "Give a num plz: ";
     std::cin >> input;
-    Color color = static_cast<Color>(input);
+    Color color = static_cast<Color>(input);    //we cannot assign an integer value to an enum directly
     std::cout << color << std::endl;
 
     // Trying to assign enumerators from one enum type to another enum type will cause a compile error.
+
+    // With normal enumerations, enumerators are placed in the same scope as the enumeration itself, 
+    // so you can typically access enumerators directly (e.g. RED). 
+    // However, with enum classes, the strong scoping rules mean that all enumerators are considered part of the enumeration, 
+    // so you have to use a scope qualifier to access the enumerator (e.g. Color::RED). 
+    // This helps keep name pollution and the potential for name conflicts down.
+    enum class Dog{
+        Corgi,
+        Husky,
+    };
+
+    enum class Cat{
+        Engshort,
+        Tiger,
+    };
+
+    // Dog whichOne = Dog::Corgi;
+    // Cat thisOne = Cat::Engshort;
+    // if(whichOne == thisOne){    //compile error will happen
+    //     ;
+    // }
+    
+
+    // With enum classes, the compiler will no longer implicitly convert enumerator values to integers.
+    // std::cout << Cat::Engshort;
+    std::cout << "The cat is: " << static_cast<int>(Cat::Engshort) << std::endl;
+    
+    // >>> 'typedef' and 'using'
+    // typedef double distance_t;
+    using distance_t = double;  //this decclaration is the same as above 
+
     
 
     return 0;
